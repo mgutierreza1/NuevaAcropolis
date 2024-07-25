@@ -15,3 +15,30 @@ Una vez descargador el proyecto ejecutar los siguientes comandos en orden.
 ```
 
 
+## Estructura del proyecto
+
+
+```text
+📁NuevaAcropolis
+    ├── .env
+    └── 📁src
+        ├── index.jsx
+        ├── main.jsx
+        ├── App.jsx
+        │
+        ├── 📁assets
+        │
+        ├── 📁core
+        │       ├── 📁routes
+        │       ├── 📁components
+        │       ├── 📁hooks
+        │       ├── 📁services
+        │       ├── 📁store
+        │       └── 📁utils
+        │
+        └── 📁modules
+            └── 📁home
+                ├── 📁containers
+                ├── 📁components
+                └── 📁hooks
+```
