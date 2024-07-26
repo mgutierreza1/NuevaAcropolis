@@ -2,6 +2,13 @@
 
 ## Descripción
 
+## Plugings recomendados
+- El siguiente plugin permite ver los diferentes elementos que contiene TailWind:
+[Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+
+
+
+
 ## Cómo ejecutar el proyecto 
 
 Una vez descargador el proyecto ejecutar los siguientes comandos en orden.
