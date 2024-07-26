@@ -1,8 +1,8 @@
 const HomeContainer = () => {
     return (
-        <div>
-            <h1>Home Container</h1>
-        </div>
+        <h1 className="text-3xl font-bold underline">
+            Home Container
+        </h1>
     );
 };
 
