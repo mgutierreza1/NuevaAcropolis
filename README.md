@@ -3,9 +3,15 @@
 ## Descripción
 
 ## Plugings recomendados
+
 - El siguiente plugin permite ver los diferentes elementos que contiene TailWind:
 [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
 
+## Documentación Externa
+
+- Documentación de [React Router](https://reactrouter.com/en/main)
+
+- Documentación de [HeroIcons Documentation](https://github.com/tailwindlabs/heroicons), Buscador de Iconos [HeroIcons List](https://heroicons.com)
 
 
 
