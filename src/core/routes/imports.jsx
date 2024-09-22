@@ -1,11 +1,19 @@
 import { lazy } from "react";
 
-export const MainContainer = lazy(
-    () => import("../../modules/home/containers/MainContainer.jsx")
+export const MainLayout = lazy(
+    () => import("../layouts/mainlayout.layout.jsx")
 );
 
 export const LoginContainer = lazy(
     () => import("../../modules/login/containers/LoginContainer.jsx")
+);
+
+export const MainContainer = lazy(
+    () => import("../../modules/home/containers/MainContainer.jsx")
+);
+
+export const WorkshopContainer = lazy(
+    () => import("../../modules/workshop/containers/MainContainer.jsx")
 );
 
 export const Page1 = lazy(
