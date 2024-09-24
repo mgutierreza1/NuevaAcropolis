@@ -1,35 +1,15 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 import CustomTable from '../../../core/components/CustomTable.component.jsx';
+import { useWorkshops } from '../hooks/userWorkshop.hook.jsx';
 
 
 const WorkshopPage = () => {
-    const headers = ['Product name', 'Color', 'Category', 'Price'];
-    const data = [
-        { id: 1, product_name: "Apple MacBook Pro 17\"", color: "Silver", category: "Laptop", price: "$2999" },
-        { id: 2, product_name: "Microsoft Surface Pro", color: "White", category: "Laptop PC", price: "$1999" },
-        { id: 3, product_name: "Magic Mouse 2", color: "Black", category: "Accessories", price: "$99" },
-        { id: 4, product_name: "Magic Mouse 2", color: "Black", category: "Accessories", price: "$99" },
-        { id: 5, product_name: "Magic Mouse 2", color: "Black", category: "Accessories", price: "$99" },
-        { id: 6, product_name: "Magic Mouse 2", color: "Black", category: "Accessories", price: "$99" },
-        { id: 7, product_name: "Apple MacBook Pro 17\"", color: "Silver", category: "Laptop", price: "$2999" },
-        { id: 8, product_name: "Microsoft Surface Pro", color: "White", category: "Laptop PC", price: "$1999" },
-        { id: 9, product_name: "Magic Mouse 2", color: "Black", category: "Accessories", price: "$99" },
-        { id: 10, product_name: "Magic Mouse 2", color: "Black", category: "Accessories", price: "$99" },
-        { id: 11, product_name: "Magic Mouse 2", color: "Black", category: "Accessories", price: "$99" },
-        { id: 12, product_name: "Magic Mouse 2", color: "Black", category: "Accessories", price: "$99" },
-        { id: 13, product_name: "Apple MacBook Pro 17\"", color: "Silver", category: "Laptop", price: "$2999" },
-        { id: 14, product_name: "Microsoft Surface Pro", color: "White", category: "Laptop PC", price: "$1999" },
-        { id: 15, product_name: "Magic Mouse 21", color: "Black", category: "Accessories", price: "$99" },
-        { id: 16, product_name: "Magic Mouse 22", color: "Black", category: "Accessories", price: "$99" },
-        { id: 17, product_name: "Magic Mouse 232", color: "Black", category: "Accessories", price: "$99" },
-        { id: 18, product_name: "Magic Mouse 232", color: "Black", category: "Accessories", price: "$99" },
-        { id: 19, product_name: "Apple MacBook Pro 117\"", color: "Silver", category: "Laptop", price: "$2999" },
-        { id: 20, product_name: "Microsoft Surface Pro", color: "White", category: "Laptop PC", price: "$1999" },
-        { id: 21, product_name: "Magic Mouse 123", color: "Black", category: "Accessories", price: "$99" },
-        { id: 22, product_name: "Magic Mouse 9", color: "Black", category: "Accessories", price: "$99" },
-        { id: 23, product_name: "Magic Mouse 1", color: "Black", category: "Accessories", price: "$99" },
-        { id: 24, product_name: "Magic Mouse 4", color: "Black", category: "Accessories", price: "$99" },
-    ];
+    const { workshops, getAll, laoding, error } = useWorkshops();
+    const headers = ['name', 'description'];
+
+    useEffect(() => {
+        getAll();
+    }, [getAll]);
 
     const handleDelete = (item) => {
         console.log("Item eliminado:", item);
@@ -43,15 +23,26 @@ const WorkshopPage = () => {
 
     return (
         <>
-            <div>Workshop Page</div>
-            <CustomTable
-                headers={headers}
-                data={data}
-                totalItems={data.length}
-                itemsPerPageParam={10}
-                onDelete={handleDelete}
-                onEdit={handleEdit}
-            />
+            <button
+                type="button"
+                class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+            >
+                Registrar nuevo Taller
+            </button>
+            {
+                laoding ?
+                    <p>Cargando...</p>
+                    :
+                    <CustomTable
+                        headers={headers}
+                        data={workshops}
+                        totalItems={workshops.length}
+                        itemsPerPageParam={10}
+                        onDelete={handleDelete}
+                        onEdit={handleEdit}
+                    />
+            }
+            {error && <p style={{ color: 'red' }}>{error}</p>}
         </>
     );
 };
