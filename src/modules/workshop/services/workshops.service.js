@@ -20,3 +20,16 @@ export const getAllWorkshops = async () => {
         throw new Error("Error to get workshops");
     }
 }
+
+export const saveWorkshops = async ({ name, description }) => {
+    try {
+        const response  = await fetch(API_URL, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+    } catch (e) {
+        throw new Error("Error to get workshops");
+    }
+}

@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { LoginContainer, MainContainer, MainLayout, Page1, Page2, WorkshopContainer } from "./imports";
+import { CreateWorkshopContainer, LoginContainer, MainContainer, MainLayout, Page1, Page2, WorkshopContainer } from "./imports";
 
 export const router = createBrowserRouter([
     {
@@ -19,6 +19,12 @@ export const router = createBrowserRouter([
             {
                 path: "workshop",
                 element: <WorkshopContainer />,
+                children: [
+                    {
+                        path: "create_workshop",
+                        element: <CreateWorkshopContainer />
+                    }
+                ]
             },
             {
                 path: "page2",
