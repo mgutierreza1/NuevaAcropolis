@@ -23,10 +23,15 @@ export const getAllWorkshops = async () => {
 
 export const saveWorkshops = async ({ name, description }) => {
     try {
-        const response  = await fetch(API_URL, {
+        const response = await fetch(API_URL, {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
-            }
+            },
+            body: JSON.stringify({
+                name: name,
+                description: description,
+            })
         });
 
     } catch (e) {

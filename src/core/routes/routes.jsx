@@ -7,9 +7,13 @@ export const router = createBrowserRouter([
         element: <MainLayout />,
         children: [
             {
-                path: "/",
-                element: <MainContainer />,
+                path: "",
                 children: [
+                    {
+                        index: true,
+                        path: "",
+                        element: <MainContainer />,
+                    },
                     {
                         path: "page1",
                         element: <Page1 />,
@@ -18,8 +22,12 @@ export const router = createBrowserRouter([
             },
             {
                 path: "workshop",
-                element: <WorkshopContainer />,
                 children: [
+                    {
+                        path: "",
+                        index: true,
+                        element: <WorkshopContainer />,
+                    },
                     {
                         path: "create_workshop",
                         element: <CreateWorkshopContainer />
