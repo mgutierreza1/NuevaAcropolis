@@ -1,21 +1,28 @@
 import { useForm } from "react-hook-form";
-import { useRegisterWorkshop } from "../hooks/useRegisterWorkshop.hook";
+import { useLocation, useParams } from "react-router-dom";
+import { useUpdateWorkshop } from "../hooks/useUpdateWorkshop.hook";
 
-const CreateWorkshopContainer = () => {
-  const { saveWorkshop, loading, error } = useRegisterWorkshop();
+const UpdateWorkshopContainer = () => {
+  const { id } = useParams();
+  const { state } = useLocation();
+  const { updateWorkshop, loading, error } = useUpdateWorkshop();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
     defaultValues: {
-      name: "",
-      description: "",
+      name: state.name,
+      description: state.description,
     },
   });
 
   const onSubmit = handleSubmit((data) => {
-    saveWorkshop(data);
+    const name = data.name;
+    const description = data.description;
+
+    updateWorkshop({ id, name, description });
   });
 
   return (
@@ -81,4 +88,4 @@ const CreateWorkshopContainer = () => {
   );
 };
 
-export default CreateWorkshopContainer;
+export default UpdateWorkshopContainer;

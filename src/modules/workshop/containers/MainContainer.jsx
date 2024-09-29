@@ -2,24 +2,31 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import CustomTable from "../../../core/components/CustomTable.component.jsx";
 import { useWorkshops } from "../hooks/useWorkshop.hook.jsx";
+import { useDeleteWorkshop } from "../hooks/useDeleteWorkshop.hook.jsx";
 
 const WorkshopContainer = () => {
   const navigate = useNavigate();
-  const { workshops, getAll, laoding, error } = useWorkshops();
   const headers = ["name", "description"];
+  const { workshops, getAll, laoding, error } = useWorkshops();
+  const { deleteWorkshop, loading, errorDelete } = useDeleteWorkshop();
 
   useEffect(() => {
     getAll();
   }, [getAll]);
 
   const handleDelete = (item) => {
-    console.log("Item eliminado:", item);
-    // Aquí puedes agregar la lógica para eliminar el item
+    const id = item.id;
+    deleteWorkshop({ id }).then(() => {
+      getAll();
+    });
   };
 
   const handleEdit = (item) => {
-    console.log("Item editado:", item);
-    // Aquí puedes agregar la lógica para editar el item
+    const id = item.id;
+    navigate(
+      `/workshop/update_workshop/${id}`,
+      { state: item },
+    );
   };
 
   const handleClick = () => {

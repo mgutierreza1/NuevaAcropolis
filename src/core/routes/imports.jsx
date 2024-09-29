@@ -20,6 +20,10 @@ export const CreateWorkshopContainer = lazy(
     () => import("../../modules/workshop/containers/CreateWorkshopContainer.jsx")
 );
 
+export const UpdateWorkshopContainer = lazy(
+    () => import("../../modules/workshop/containers/UpdateWorkshopContainer.jsx")
+);
+
 export const Page1 = lazy(
     () => import("../../modules/home/pages/Page1.jsx")
 );

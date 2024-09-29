@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { CreateWorkshopContainer, LoginContainer, MainContainer, MainLayout, Page1, Page2, WorkshopContainer } from "./imports";
+import { CreateWorkshopContainer, LoginContainer, MainContainer, MainLayout, Page1, Page2, UpdateWorkshopContainer, WorkshopContainer } from "./imports";
 
 export const router = createBrowserRouter([
     {
@@ -31,6 +31,10 @@ export const router = createBrowserRouter([
                     {
                         path: "create_workshop",
                         element: <CreateWorkshopContainer />
+                    },
+                    {
+                        path: "update_workshop/:id",
+                        element: <UpdateWorkshopContainer />
                     }
                 ]
             },
