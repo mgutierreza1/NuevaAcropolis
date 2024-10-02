@@ -16,10 +16,18 @@ export const WorkshopContainer = lazy(
     () => import("../../modules/workshop/containers/MainContainer.jsx")
 );
 
+export const CreateWorkshopContainer = lazy(
+    () => import("../../modules/workshop/containers/CreateWorkshopContainer.jsx")
+);
+
+export const UpdateWorkshopContainer = lazy(
+    () => import("../../modules/workshop/containers/UpdateWorkshopContainer.jsx")
+);
+
 export const Page1 = lazy(
     () => import("../../modules/home/pages/Page1.jsx")
 );
 
-export const PeopleContainer = lazy(
-    () => import("../../modules/people/containers/MainContainer.jsx")
+export const Page2 = lazy(
+    () => import("../../modules/home/pages/Page2.jsx")
 );
