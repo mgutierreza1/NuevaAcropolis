@@ -15,3 +15,17 @@
     margin-bottom: 40px;
     margin-top: 20px;
 }
+
+.fullScreenPage {
+    display: flex;
+    height: 100vh;
+}
+
+.fieldSetButtons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fieldSetFilters {
+    margin: 10px auto;
+}

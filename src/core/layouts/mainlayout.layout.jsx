@@ -18,7 +18,7 @@ const MainLayout = () => {
                         <h2>NUEVA ACROPOLIS</h2>
                     </MenuItem>
                     <MenuItem component={<Link to="/workshop" className="link" />} icon={<ForumIcon />}> Talleres </MenuItem>
-                    <MenuItem component={<Link to="/page2" className="link" />} icon={<AccountCircleRoundedIcon />}> Personas </MenuItem>
+                    <MenuItem component={<Link to="/people" className="link" />} icon={<AccountCircleRoundedIcon />}> Personas </MenuItem>
                     <MenuItem icon={<MonetizationOnRoundedIcon />}> Ingresos </MenuItem>
                     <MenuItem icon={<ArrowOutwardIcon />}> Gastos </MenuItem>
                 </Menu>
