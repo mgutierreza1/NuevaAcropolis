@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Select from 'react-select'; // Importa el componente de react-select
 import { ThemeProvider } from "@material-tailwind/react";
-import { useWorkshops } from '../../workshop/hooks/userWorkshop.hook.jsx';
 
 const PeoplePage = () => {
     // Datos con clave-valor
@@ -11,14 +10,6 @@ const PeoplePage = () => {
 
     // Estado para la selección de personas
     const [selectedPerson, setSelectedPerson] = useState(null);
-
-    // Lista de talleres - cursos
-    const { workshops, getAll, loading, error } = useWorkshops();
-
-    // Get All items
-    useEffect(() => {
-        getAll();
-    }, [getAll]);
 
     // Manejar la selección de la persona
     const handlePersonChange = (selectedOption) => {
@@ -58,6 +49,9 @@ const PeoplePage = () => {
                             Nueva persona
                         </button>
                     </div>
+
+                    {/* Tabla de personas */}
+                    
                 </div>
             </div>
         </ThemeProvider>

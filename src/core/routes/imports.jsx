@@ -24,6 +24,10 @@ export const UpdateWorkshopContainer = lazy(
     () => import("../../modules/workshop/containers/UpdateWorkshopContainer.jsx")
 );
 
+export const PeopleContainer = lazy(
+    () => import("../../modules/people/containers/MainContainer.jsx")
+);
+
 export const Page1 = lazy(
     () => import("../../modules/home/pages/Page1.jsx")
 );
