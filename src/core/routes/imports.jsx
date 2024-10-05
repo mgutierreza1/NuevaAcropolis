@@ -35,3 +35,7 @@ export const Page1 = lazy(
 export const Page2 = lazy(
     () => import("../../modules/home/pages/Page2.jsx")
 );
+
+export const PeopleContainer = lazy(
+    () => import("../../modules/people/containers/MainContainer.jsx")
+);

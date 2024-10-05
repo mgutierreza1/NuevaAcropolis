@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { CreateWorkshopContainer, LoginContainer, MainContainer, MainLayout, Page1, Page2, PeopleContainer, UpdateWorkshopContainer, WorkshopContainer } from "./imports";
+import { CreateWorkshopContainer, LoginContainer, MainContainer, MainLayout, Page1, Page2, UpdateWorkshopContainer, WorkshopContainer } from "./imports";
 
 export const router = createBrowserRouter([
     {
@@ -40,7 +40,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: "people",
-                element: <PeopleContainer />,
+                element: <Page2 />,
+            },
+            {
+                path: "page2",
+                element: <Page2 />,
             }
         ],
     },
