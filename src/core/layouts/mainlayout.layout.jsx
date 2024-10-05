@@ -11,8 +11,8 @@ import React, { Suspense } from 'react';
 
 const MainLayout = () => {
     return (
-        <div style={{ display: 'flex', height: '100vh', width: '100vw' }}>
-            <Sidebar style={{ height: '100%', background: '#a8d5e5' }}>
+        <div className="flex h-screen w-screen">
+            <Sidebar className="h-full" style={{ background: '#a8d5e5' }}>
                 <Menu>
                     <MenuItem className="menu1" icon={<MenuRoundedIcon />}>
                         <h2>NUEVA ACROPOLIS</h2>
@@ -23,11 +23,13 @@ const MainLayout = () => {
                     <MenuItem icon={<ArrowOutwardIcon />}> Gastos </MenuItem>
                 </Menu>
             </Sidebar>
-            <Suspense fallback={<div>Loading...</div>}>
-                <section>
-                    <Outlet />
-                </section>
-            </Suspense>
+            <main className="flex-grow overflow-auto">
+                <Suspense fallback={<div className="h-full flex items-center justify-center">Loading...</div>}>
+                    <section className="h-full flex items-center justify-center">
+                        <Outlet />
+                    </section>
+                </Suspense>
+            </main>
         </div>
     );
 };
