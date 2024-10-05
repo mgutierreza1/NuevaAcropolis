@@ -1,16 +1,18 @@
 import { useCallback, useState } from "react";
+import { getAllPeople } from "../services/people.service.js";
+
 
 export function usePeople() {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
     const [people, setPeople] = useState([]);
 
-    const getAllPeople = useCallback(async () => {
+    const getAll = useCallback(async () => {
         try {
             setLoading(true);
             setError(null);
 
-            const people = ["Melvin", "Pedro", "Jorge"];
+            const people = await getAllPeople();
 
             setPeople(people);
 

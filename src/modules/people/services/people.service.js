@@ -20,6 +20,6 @@ export const getAllPeople = async () => {
         created_at: data.created_at
       }));
     } catch (e) {
-      throw new Error("Error to get workshops");
+      throw new Error("Error to get people");
     }
   };
