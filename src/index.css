@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.center-login {
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu1 {
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.fullScreenPage {
+    display: flex;
+    height: 100vh;
+}
+
+.fieldSetButtons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fieldSetFilters {
+    display: flex;
+    margin: 10px auto;
+}
