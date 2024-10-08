@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:8000/people/";
+const API_URL = "http://127.0.0.1:8000/users/";
 
 export const getAllPeople = async () => {
     try {
@@ -9,14 +9,13 @@ export const getAllPeople = async () => {
       });
   
       const json = await response.json();
-  
+
       return json?.map((data) => ({
         id: data.id,
-        name: data.name,
-        lastname: data.lastname,
+        full_name: data.name + ' ' + data.lastname,
         phone_number: data.phone_number,
         email: data.email,
-        userType: data.userType,
+        user_type: data.userType,
         created_at: data.created_at
       }));
     } catch (e) {
